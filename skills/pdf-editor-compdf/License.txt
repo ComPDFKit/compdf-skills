@@ -1,0 +1,43 @@
+ComPDFKit SDK License Agreement
+=================================
+
+Copyright (c) 2014-2026 PDF Technologies, Inc., a KDAN Company.
+All Rights Reserved.
+
+This skill ("compdf-cli") integrates the ComPDFKit SDK for PDF processing.
+The ComPDFKit SDK is the property of PDF Technologies, Inc. and is
+protected by copyright law and international treaties.
+
+LICENSE TERMS
+-------------
+The ComPDFKit SDK is licensed, not sold. You are granted a non-exclusive,
+non-transferable, non-sublicensable, revocable license to use the SDK
+solely for the purposes described in this skill's documentation.
+
+You retain full copyright and ownership of any products or documents you
+create using this skill. PDF Technologies, Inc. retains all ownership
+rights to the ComPDFKit SDK itself.
+
+TRIAL LICENSE
+-------------
+This skill includes a 30-day free trial license. After expiration, please
+contact ComPDFKit sales to obtain a commercial license:
+
+  https://www.compdf.com/contact-sales
+
+LEGAL REFERENCES
+----------------
+Terms of Service:  https://www.compdf.com/terms-of-service
+Privacy Policy:    https://www.compdf.com/privacy-policy
+Security Policy:   https://www.compdf.com/security
+
+AFFILIATED ENTITIES
+-------------------
+PDF Technologies, Inc. operates under KDAN Company, with regional entities:
+  - KDAN Mobile Software Ltd.
+  - KDAN Mobile Software America Inc.
+  - KDAN Japan Ltd.
+  - KDAN Singapore Pte Ltd.
+  - PDF Technologies Ltd.
+
+For more information, visit: https://www.compdf.com

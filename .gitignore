@@ -1,0 +1,20 @@
+# Runtime artifacts (auto-downloaded, not for version control)
+*.model
+license.xml
+*.part
+
+# Platform-specific CLI binaries (auto-downloaded at runtime)
+skills/pdf-editor-compdf/scripts/win/
+skills/pdf-editor-compdf/scripts/mac/
+
+# ComPDF API config with user credentials
+skills/pdf-tools-compdf/config/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
