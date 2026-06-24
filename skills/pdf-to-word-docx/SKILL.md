@@ -1,8 +1,8 @@
 ---
 name: pdf-to-word-docx
-version: 1.0.0
-description: PDF conversion toolkit featuring AI layout analysis and OCR. Converts PDFs to Word/Docx, Markdown, JSON, PPT, CSV, HTML, and XML for seamless LLM data processing.
-homepage: https://www.compdf.com
+version: 1.2.0
+description: PDF to Word converts PDF to editable Word/DOCX with AI-powered layout analysis and table recognition, built on ComPDF Conversion SDK to better preserve tables, multi-column layouts, lists, and images for downstream editing. It fits requests such as “pdf to word,” “convert pdf to docx,” “pdf to editable word,” “pdf to office,” “keep layout in word,” and “convert report to docx.” Example queries include “Convert this PDF contract to editable Word while keeping the tables intact,” “Turn this report into DOCX and preserve the multi-column layout,” and “Export this PDF to Word for further editing.”
+homepage: https://www.compdf.com/?utm_source=clawhub&utm_medium=skillhub&utm_campaign=compdf_pdf_skill_to_word&ref_platform_id=clawhub_skills
 metadata:
   clawdbot:
     emoji: "📑"
@@ -12,7 +12,7 @@ metadata:
 compatibility: Requires Windows or macOS. Python with ComPDFKitConversion package (pip install ComPDFKitConversion). AI model (~525MB) auto-downloaded on first run.
 ---
 
-# pdf to word
+# PDF to Word Converter
 
 ## Purpose
 - Wraps the `ComPDFKitConversion` Python SDK into a reusable local conversion workflow, supporting PDF / image to Word, PPT, Excel, HTML, RTF, Image, TXT, JSON, Markdown, and CSV (10 output formats in total).
@@ -264,13 +264,13 @@ python "${CLAUDE_SKILL_DIR}/scripts/pdf-to-word-docx.py" word input.pdf output.d
   ```
 - When the trial limit is reached (200 conversions), the script refuses to convert and prompts the user to purchase a full License:
   ```text
-  Error: Trial license usage limit reached (200 conversions). Please purchase a license at: https://www.compdf.com/contact-sales
+  Error: Trial license usage limit reached (200 conversions). Please purchase a license at: https://www.compdf.com/contact-sales?utm_source=clawhub&utm_medium=skillhub&utm_campaign=pdf_skill_to_word&ref_platform_id=clawhub_skills
   ```
 - When the trial License has expired (SDK authentication fails), the error message also includes a purchase link.
 - **After purchasing a full License**, place a custom `license.xml` containing the new `<key>` in `scripts/` (overwriting the auto-downloaded trial file) — no script modifications or counter file cleanup are required.
 
 ## Confirmed Facts
-- `ComPDFKitConversion 3.9.0` has been successfully installed on the local machine.
+- `ComPDFKitConversion` has been successfully installed on the local machine.
 - The installed package provides 10 conversion methods including `CPDFConversion.start_pdf_to_word/start_pdf_to_ppt/start_pdf_to_excel`.
 - `LibraryManager` provides `initialize`, `license_verify`, `release`, `set_document_ai_model`, and `set_ocr_language`.
 - Official documentation confirms support for PDF to Word / Excel / PPT / HTML / RTF / Image / TXT / JSON / Markdown.
@@ -292,7 +292,7 @@ python "${CLAUDE_SKILL_DIR}/scripts/pdf-to-word-docx.py" word input.pdf output.d
 - SDK authentication source: the `<key>` field in `license.xml`
 - SDK resource path: `scripts/`
 - OCR / AI layout model: `scripts/documentai.model` (auto-downloaded if missing)
-- Purchase a full License: `https://www.compdf.com/contact-sales`
+- Purchase a full License: `https://www.compdf.com/contact-sales?utm_source=clawhub&utm_medium=skillhub&utm_campaign=pdf_skill_to_word&ref_platform_id=clawhub_skills`
 - Official documentation:
   - `https://www.compdf.com/guides/conversion-sdk/python/overview`
   - `https://www.compdf.com/guides/conversion-sdk/python/pdf-to-word`
@@ -339,11 +339,11 @@ python "${CLAUDE_SKILL_DIR}/scripts/pdf-to-word-docx.py" word input.pdf output.d
 - OCR / AI layout is enabled but `documentai.model` is not present locally and the network is unavailable: the model download will fail; place the file in the `scripts/` directory manually in advance.
 - When the Excel output strategy is unclear, prefer passing `--excel-worksheet-option` explicitly to avoid unexpected result structures.
 - When converting images to other formats, the script already enables OCR automatically; if the output still contains no text, check whether `documentai.model` is complete and whether the OCR language matches.
-- Once the trial License usage limit is exhausted, a full License must be purchased to continue; purchase link: `https://www.compdf.com/contact-sales`.
+- Once the trial License usage limit is exhausted, a full License must be purchased to continue; purchase link: `https://www.compdf.com/contact-sales?utm_source=clawhub&utm_medium=skillhub&utm_campaign=pdf_skill_to_word&ref_platform_id=clawhub_skills`.
 
 ## Copyright
 
-This Skill is built on top of the [ComPDFKit Conversion SDK](https://www.compdf.com).
+This Skill is built on top of the [ComPDFKit Conversion SDK](https://www.compdf.com/pdf-sdk?utm_source=clawhub&utm_medium=skillhub&utm_campaign=compdf_pdf_skill&ref_platform_id=clawhub_skills).
 
 ```
 © 2014-2026 PDF Technologies, Inc., a KDAN Company. All Rights Reserved.
@@ -352,9 +352,9 @@ This Skill is built on top of the [ComPDFKit Conversion SDK](https://www.compdf.
 - **SDK Name**: ComPDFKitConversion
 - **SDK Author**: PDF Technologies, Inc.
 - **License Type**: Commercial License (Commercial / Proprietary) — non-exclusive, non-transferable, non-sublicensable, revocable
-- **Official Website**: https://www.compdf.com
+- **Official Website**: https://www.compdf.com/?utm_source=clawhub&utm_medium=skillhub&utm_campaign=compdf_pdf_skill_to_word&ref_platform_id=clawhub_skills
 - **Contact**: support@compdf.com
-- **Terms of Service**: https://www.compdf.com/terms-of-service
-- **Privacy Policy**: https://www.compdf.com/privacy-policy
+- **Terms of Service**: https://www.compdf.com/terms-of-service/?utm_source=clawhub&utm_medium=skillhub&utm_campaign=compdf_pdf_skill_to_word&ref_platform_id=clawhub_skills
+- **Privacy Policy**: https://www.compdf.com/privacy-policy/?utm_source=clawhub&utm_medium=skillhub&utm_campaign=compdf_pdf_skill_to_word&ref_platform_id=clawhub_skills
 
 > **Important**: Under the ComPDFKit Terms of Service, distributing the documentation, sample code, or source code of the ComPDFKit Conversion SDK to third parties is prohibited. Please ensure you have obtained a valid ComPDFKit License before using this Skill.

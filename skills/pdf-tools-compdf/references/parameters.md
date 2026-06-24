@@ -328,4 +328,4 @@ Upload exactly 2 PDF files, no additional parameters required.
 - Page numbers start from 1
 - When the `parameter` field is not passed, default values are used
 - The `password` field is independent of `parameter`, passed directly as form-data
-- For more parameter details on specific tools, please refer to the official documentation: <https://api.compdf.com/api-reference/overview>
+- For more parameter details on specific tools, please refer to the official documentation: <https://www.compdf.com/guides/api-reference/v2/overview?utm_source=clawhub&utm_medium=skillhub&utm_campaign=pdf_skill_pdf_toolkit&ref_platform_id=clawhub_skills>

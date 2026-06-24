@@ -1,15 +1,14 @@
 ---
 name: pdf-tools-compdf
 description: >
-  Process, convert, edit, and extract data from PDF files using the ComPDF Cloud API. Supports format conversion (Word, Excel, Image), page manipulation (merge, split, compress), watermarking, and OCR text recognition. Use when converting PDF formats, reorganizing pages, adding watermarks, or extracting document content and tables into a structured format for LLM processing or text analysis.
-  keywords: PDF to Word, compress PDF, OCR, merge PDF, extract text, powered by the ComPDF Cloud API.
+  PDF Toolkit handles mixed PDF workflows with a flexible toolset for page organization, basic editing, viewing, and general document processing, built on ComPDF’s all-in-one PDF stack and best used when one request involves multiple PDF operations. It matches triggers such as “pdf toolkit,” “all-in-one pdf,” “process this pdf,” “pdf workflow,” “handle pdf file,” and “multiple pdf operations.” Example queries include “Merge these files, rotate the wrong pages, and return a clean final PDF,” “Help me organize this PDF before I send it to the client,” and “Process this PDF end to end and give me a shareable output.”
 ---
 
 # PDF Toolkit
 
 Process PDF files through ComPDF Cloud REST API. Supports 50+ document processing operations.
 
-Official documentation: <https://api.compdf.com/api-reference/overview>
+Official documentation: <https://www.compdf.com/guides/api-reference/v2/overview?utm_source=clawhub&utm_medium=skillhub&utm_campaign=pdf_skill_pdf_toolkit&ref_platform_id=clawhub_skills>
 
 ## When to Run
 
@@ -31,7 +30,7 @@ Official documentation: <https://api.compdf.com/api-reference/overview>
 Check whether `config/public_key.txt` exists and contains a non-empty value.
 
 - **If the file exists and is non-empty**: use the stored key (trim whitespace).
-- **If the file is missing or empty**: ask the user for their ComPDF API Public Key. Inform them it can be obtained at <https://api-dashboard.compdf.com/api/keys>. After the user provides the key, ask whether they would like to save it locally for future sessions.
+- **If the file is missing or empty**: ask the user for their ComPDF API Public Key. Inform them it can be obtained at <https://www.compdf.com/compdf-portal/signin?utm_source=clawhub&utm_medium=skillhub&utm_campaign=pdf_skill_pdf_toolkit&ref_platform_id=clawhub_skills>. After the user provides the key, ask whether they would like to save it locally for future sessions.
   - If the user agrees, write the key to `config/public_key.txt`.
   - If the user declines, use the key for the current session only without saving.
 
@@ -46,7 +45,7 @@ Check whether `config/public_key.txt` exists and contains a non-empty value.
 > Your file will be uploaded to ComPDF's servers (api-server.compdf.com or api-server.compdf.cn) for processing. Please confirm that:
 > 1. You consent to uploading this file to external servers.
 > 2. The file does not contain highly sensitive or confidential data, or you accept the associated risk.
-> 3. You have reviewed ComPDF's Privacy Policy at <https://www.compdf.com/privacy-policy>.
+> 3. You have reviewed ComPDF's Privacy Policy at <https://www.compdf.com/privacy-policy/?utm_source=clawhub&utm_medium=skillhub&utm_campaign=compdf_pdf_skill_pdf_toolkit&ref_platform_id=clawhub_skills>.
 
 **Only proceed with the upload after receiving explicit user confirmation.**
 
@@ -118,7 +117,7 @@ Do not send the request until the user has confirmed that the file may be transm
 
 **6. On quota exhaustion** (`code` = `"06001"`): inform the user:
 
-> For more credits, please visit <https://api.compdf.com/api/pricing-old>
+> For more credits, please visit <https://api.compdf.com/api/pricing-old/?utm_source=clawhub&utm_medium=skillhub&utm_campaign=compdf_pdf_skill_pdf_toolkit&ref_platform_id=clawhub_skills>
 
 ### Auxiliary Endpoints
 
@@ -171,8 +170,8 @@ Suggestion: {troubleshooting suggestion from references/error-codes.md}
 
 Copyright © 2014-2026 PDF Technologies, Inc., a KDAN Company. All Rights Reserved.
 
-ComPDF and ComPDFKit are trademarks of [PDF Technologies, Inc.](https://www.compdf.com/), a KDAN Company.
+ComPDF and ComPDFKit are trademarks of [PDF Technologies, Inc.](https://www.compdf.com/?utm_source=clawhub&utm_medium=skillhub&utm_campaign=compdf_pdf_skill_pdf_toolkit&ref_platform_id=clawhub_skills), a KDAN Company.
 
 This skill package is licensed under the Apache License 2.0. See `LICENSE.txt` for the full license text.
 
-The ComPDF Cloud API is a commercial service provided by PDF Technologies, Inc. Use of the API is subject to the [ComPDF Terms of Service](https://www.compdf.com/terms-of-service) and [Privacy Policy](https://www.compdf.com/privacy-policy).
+The ComPDF Cloud API is a commercial service provided by PDF Technologies, Inc. Use of the API is subject to the [ComPDF Terms of Service](https://www.compdf.com/terms-of-service/?utm_source=clawhub&utm_medium=skillhub&utm_campaign=compdf_pdf_skill_pdf_toolkit&ref_platform_id=clawhub_skills) and [Privacy Policy](https://www.compdf.com/privacy-policy/?utm_source=clawhub&utm_medium=skillhub&utm_campaign=compdf_pdf_skill_pdf_toolkit&ref_platform_id=clawhub_skills).

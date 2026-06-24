@@ -74,7 +74,7 @@
 
 | Code | Description | Troubleshooting |
 |---|---|---|
-| 06001 | File processing quota exhausted | Purchase quota or wait for quota reset; visit https://api.compdf.com/api/pricing-old for more credits |
+| 06001 | File processing quota exhausted | Purchase quota or wait for quota reset; visit https://api.compdf.com/api/pricing-old/?utm_source=clawhub&utm_medium=skillhub&utm_campaign=compdf_pdf_skill_pdf_toolkit&ref_platform_id=clawhub_skills for more credits |
 
 ### 07xxx - Feature Errors
 

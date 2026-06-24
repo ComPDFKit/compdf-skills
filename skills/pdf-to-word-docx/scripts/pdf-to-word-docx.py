@@ -1,12 +1,12 @@
 # ---------------------------------------------------------------------------
-# pdf to word
-# Built on ComPDFKit Conversion SDK (https://www.compdf.com)
+# PDF to Word Converter
+# Built on ComPDFKit Conversion SDK (https://www.compdf.com/?utm_source=clawhub&utm_medium=skillhub&utm_campaign=compdf_pdf_skill_to_word&ref_platform_id=clawhub_skills)
 #
 # © 2014-2026 PDF Technologies, Inc., a KDAN Company. All Rights Reserved.
 #
 # License: Commercial / Proprietary
 # Contact: support@compdf.com
-# Terms of Service: https://www.compdf.com/terms-of-service
+# Terms of Service: https://www.compdf.com/terms-of-service/?utm_source=clawhub&utm_medium=skillhub&utm_campaign=compdf_pdf_skill_to_word&ref_platform_id=clawhub_skills
 # ---------------------------------------------------------------------------
 
 from __future__ import annotations
@@ -143,7 +143,7 @@ LICENSE_RETRY_DELAYS = (2, 5, 10)
 # Trial license usage limit
 TRIAL_KEY_FINGERPRINT = "49a6fbe9b5966c54b43defaa1fc7d5fd418aefd9e3c63c74beb06c22c27c28ee"
 TRIAL_USAGE_LIMIT = 200
-PURCHASE_URL = "https://www.compdf.com/contact-sales"
+PURCHASE_URL = "https://www.compdf.com/contact-sales?utm_source=clawhub&utm_medium=skillhub&utm_campaign=pdf_skill_to_word&ref_platform_id=clawhub_skills"
 SUPPORTED_FORMATS = {
     "word": "start_pdf_to_word",
     "excel": "start_pdf_to_excel",
@@ -400,6 +400,10 @@ def configure_options(args: argparse.Namespace) -> ConvertOptions:
         options.image_type = IMAGE_TYPES[args.image_type]
     if args.ocr_option is not None:
         options.ocr_option = OCR_OPTIONS[args.ocr_option]
+    # SDK >=4.0: OCR languages via ConvertOptions.languages
+    # SDK <4.0:  OCR languages via LibraryManager.set_ocr_language (handled in run_conversion)
+    if hasattr(options, "languages"):
+        options.languages = [OCR_LANGUAGES[lang] for lang in args.ocr_language]
     return options
 
 
@@ -529,11 +533,17 @@ def convert(args: argparse.Namespace) -> ErrorCode:
     options = configure_options(args)
     if needs_document_ai_model(args):
         model_path = ensure_document_ai_model(scripts_dir)
-        ocr_langs = resolve_ocr_languages(args)
-        model_error = LibraryManager.set_document_ai_model(str(model_path), ocr_langs)
+        ocr_langs = [OCR_LANGUAGES[lang] for lang in args.ocr_language]
+        # SDK >=4.0: set_document_ai_model(path) — no ocr_langs param
+        # SDK <4.0:  set_document_ai_model(path, ocr_langs)
+        if hasattr(LibraryManager, "set_ocr_language"):
+            model_error = LibraryManager.set_document_ai_model(str(model_path), ocr_langs)
+        else:
+            model_error = LibraryManager.set_document_ai_model(str(model_path))
         if model_error != ErrorCode.SUCCESS:
             raise RuntimeError(f"Document AI model initialization failed: {model_error.name} ({int(model_error)})")
-        if args.enable_ocr:
+        # SDK <4.0: must also call set_ocr_language separately when OCR enabled
+        if hasattr(LibraryManager, "set_ocr_language") and args.enable_ocr:
             LibraryManager.set_ocr_language(ocr_langs)
 
     converter = resolve_converter(args.format)

@@ -23,12 +23,14 @@ TRIAL LICENSE
 This skill includes a 30-day free trial license. After expiration, please
 contact ComPDFKit sales to obtain a commercial license:
 
-  https://www.compdf.com/contact-sales
+https://www.compdf.com/contact-sales?utm_source=clawhub&utm_medium=skillhub&utm_campaign=pdf_skill_pdf_editor&ref_platform_id=clawhub_skills
 
 LEGAL REFERENCES
 ----------------
-Terms of Service:  https://www.compdf.com/terms-of-service
-Privacy Policy:    https://www.compdf.com/privacy-policy
+Terms of Service:  https://www.compdf.com/terms-of-service/?utm_source=clawhub&utm_medium=skillhub&utm_campaign=pdf_skill_pdf_editor&ref_platform_id=clawhub_skills
+
+Privacy Policy:    https://www.compdf.com/privacy-policy/?utm_source=clawhub&utm_medium=skillhub&utm_campaign=pdf_skill_pdf_editor&ref_platform_id=clawhub_skills
+
 Security Policy:   https://www.compdf.com/security
 
 AFFILIATED ENTITIES
@@ -40,4 +42,4 @@ PDF Technologies, Inc. operates under KDAN Company, with regional entities:
   - KDAN Singapore Pte Ltd.
   - PDF Technologies Ltd.
 
-For more information, visit: https://www.compdf.com
+For more information, visit: https://www.compdf.com/?utm_source=clawhub&utm_medium=skillhub&utm_campaign=pdf_skill_pdf_editor&ref_platform_id=clawhub_skills

@@ -24,7 +24,7 @@ only, limited to 200 conversions.
 ------------------------------------------------------------------------
 
 By using this software, you agree to the ComPDFKit Terms of Service:
-https://www.compdf.com/terms-of-service
+https://www.compdf.com/terms-of-service/?utm_source=clawhub&utm_medium=skillhub&utm_campaign=compdf_pdf_skill_to_word&ref_platform_id=clawhub_skills
 
 In particular:
 
@@ -57,8 +57,12 @@ OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 4. CONTACT & PURCHASE
 ------------------------------------------------------------------------
 
-  Website:          https://www.compdf.com
-  Purchase License: https://www.compdf.com/contact-sales
-  Email:            support@compdf.com
-  Terms of Service: https://www.compdf.com/terms-of-service
-  Privacy Policy:   https://www.compdf.com/privacy-policy
+  Website: https://www.compdf.com/pdf-sdk?utm_source=clawhub&utm_medium=skillhub&utm_campaign=compdf_pdf_skill&ref_platform_id=clawhub_skills
+
+  Purchase License: https://www.compdf.com/contact-sales?utm_source=clawhub&utm_medium=skillhub&utm_campaign=pdf_skill_to_word&ref_platform_id=clawhub_skills
+
+  Email: support@compdf.com
+
+  Terms of Service: https://www.compdf.com/terms-of-service/?utm_source=clawhub&utm_medium=skillhub&utm_campaign=compdf_pdf_skill_to_word&ref_platform_id=clawhub_skills
+
+  Privacy Policy: https://www.compdf.com/privacy-policy/?utm_source=clawhub&utm_medium=skillhub&utm_campaign=compdf_pdf_skill_to_word&ref_platform_id=clawhub_skills
