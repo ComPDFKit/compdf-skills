@@ -4,7 +4,7 @@ As part of the KDAN ecosystem, ComPDF Skills work with **39+ AI coding agents** 
 
 Get started in seconds — no complex setup, just `npx skills add` and you're ready to process PDFs through your AI agent.
 
-> ⭐ Star this repo if you find it helpful! Questions or feedback? Join our [Discussions](https://github.com/orgs/ComPDFKit/discussions).
+> ⭐ Star this repo if you find it helpful! Questions or feedback? Join our [Discussions](https://github.com/ComPDFKit/compdf-skills/discussions).
 
 **Why ComPDF Skills?**
 
