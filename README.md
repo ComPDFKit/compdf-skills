@@ -1,198 +1,206 @@
-# ComPDF Skills — AI Agent–Ready PDF Processing Toolkit
+![ComPDF-Comprehensive PDF Solutions](images/ComPDF-ComprehensivePDFSolutions.png)
 
-As part of the KDAN ecosystem, ComPDF Skills work with **39+ AI coding agents** including Claude Code, Cursor, GitHub Copilot, OpenCode, Windsurf, Gemini CLI, and more.
+[English](README.md) | [繁體中文](README_TW.md) | [日本語](README_JA.md) | [简体中文](README_CN.md)
 
-Get started in seconds — no complex setup, just `npx skills add` and you're ready to process PDFs through your AI agent.
+# ComPDF Skills
 
-> ⭐ Star this repo if you find it helpful! Questions or feedback? Join our [Discussions](https://github.com/ComPDFKit/compdf-skills/discussions).
+**ComPDF Skills** provide **PDF and image parsing, data extraction, document format conversion, and PDF processing capabilities** for AI agents, helping them build complete automated document workflows. Before large-model reasoning begins, ComPDF Skills can handle document parsing, OCR, data extraction, and structured preprocessing, turning unstructured files into data that AI can directly understand. This means only the necessary content is passed to the model, reducing token usage, lowering model cost, and significantly improving both document-processing efficiency and answer quality in agent workflows.
 
-**Why ComPDF Skills?**
+> - If ComPDF Skills help your workflow, we'd love your ⭐ **Star** on GitHub.
+> - If you have questions, suggestions, or integration ideas, feel free to reach out through **Issues** and **Discussions**.
 
-* **Works Everywhere** — Compatible with 39+ AI coding agents and integrates with Salesforce, SharePoint, Make, Zapier, and MCP tools
-* **10+ Output Formats** — Word, Excel, PPT, HTML, Markdown, JSON, CSV, RTF, TXT, Image — all from a single skill
-* **Local & Cloud Options** — Choose local processing for sensitive documents or cloud API for zero-install convenience
-* **Free to Start** — 200 free conversions (SDK trial) or 200+ free monthly API calls
-* **Enterprise-Grade** — Secure infrastructure with data privacy compliance
+<p align="center">
+  <a href="https://github.com/ComPDFKit/compdf-skills"><img src="https://img.shields.io/github/stars/ComPDFKit/compdf-skills?style=social" alt="GitHub Stars"></a>
+  <a href="#"><img src="https://img.shields.io/badge/Agent%20Skills-Ready-3863F1" alt="Agent Skills Ready"></a>
+  <a href="#"><img src="https://img.shields.io/badge/License-Free%20to%20Start-FF8A00" alt="Free to Start"></a>
+</p>
 
-## Requirements
+<p align="center">
+  <a href="#why-compdf-skills"><b>Why ComPDF Skills</b></a> •
+  <a href="#supported-features"><b>Supported Features</b></a> •
+  <a href="#license-and-free-access"><b>License & Free Access</b></a> •
+  <a href="#installation-and-enablement"><b>Installation</b></a> •
+  <a href="#use-cases-and-example-prompts"><b>Use Cases</b></a> •
+  <a href="#support"><b>Support</b></a>
+</p>
 
-| Skill             | Platform        | Dependencies                                                                                                                                                         |
-| ----------------- | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| pdf-to-word-docx  | Windows / macOS | Python 3, `pip install ComPDFKitConversion`. AI model (~525MB) auto-downloads on first run.                                                                          |
-| pdf-editor-compdf | Windows / macOS | CLI binary auto-downloads. Windows: .NET Framework. macOS: ComPDFKit.framework.                                                                                      |
-| pdf-tools-compdf  | Any (cloud)     | ComPDF API key ([get one free](https://api.compdf.com?utm_source=github&utm_medium=compdf-skills&utm_campaign=compdf_skills_repo&ref_platform_id=github_compdfkit)). |
+## Why ComPDF Skills
 
-## Free Trial & License
+- Professional AI document-processing capabilities: support PDF and image parsing, OCR, data extraction, format conversion, and page-level processing, turning unstructured documents into structured data that AI agents can directly understand and use more accurately.
 
-Each ComPDF Skill uses a different license mechanism. See the table below for details and the individual skill sections for step-by-step guidance. If you need to upgrade or purchase, [contact our sales](https://www.compdf.com/contact-sales?utm_source=github&utm_medium=compdf-skills&utm_campaign=compdf_skills_repo&ref_platform_id=github_compdfkit).
+- More efficient, lower-cost AI workflows: complete document parsing and preprocessing before model reasoning, and pass only the necessary content to the LLM to reduce token usage, lower model cost, and improve both response speed and workflow efficiency.
 
-| Skill                 | License Type                  | How to Get It                                                                      | Free Trial Limit            | License Storage                                                                        |
-| --------------------- | ----------------------------- | ---------------------------------------------------------------------------------- | --------------------------- | -------------------------------------------------------------------------------------- |
-| **pdf-to-word-docx**  | Commercial (Proprietary)      | Auto-downloaded from `download.compdf.com` on first run                            | 200 conversions             | `scripts/license.xml`                                                                  |
-| **pdf-editor-compdf** | Commercial (Proprietary)      | Email activation — skill sends request to `wms.compdf.com/api/license/skillsTrial` | 30-day time-limited trial   | `scripts/win/license_key_windows.xml` (Win)<br>`scripts/mac/license_key_mac.xml` (Mac) |
-| **pdf-tools-compdf**  | API Key (Apache 2.0 for code) | Register at ComPDF Cloud console (`api-dashboard.compdf.com/api/keys`)             | 200+ free API call / month) | `config/public_key.txt` (optional, user-consented)                                     |
+- Broad output format support: support Word, Excel, PowerPoint, HTML, Markdown, JSON, CSV, RTF, TXT, image, and other output formats to meet data exchange needs across agent workflows and business systems.
 
-## Provided Skills
+- Free to start and easy to validate: include free monthly document-processing credits so teams can verify value quickly in day-to-day workflows.
 
-| Skill                 | What It Does                                                                                                                       | Best For                                               | Runs On            |
-| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ | ------------------ |
-| **pdf-to-word-docx**  | Convert PDF/image to 10 formats (Word, Excel, PPT, HTML, Image, TXT, JSON, Markdown, RTF, CSV, etc.) with AI layout analysis & OCR | Document conversion, content extraction, archiving     | Local (Python SDK) |
-| **pdf-editor-compdf** | Split, merge, extract, insert, rotate, delete pages. Document comparison, compression, PDF/A/UA conversion, watermark management   | Page editing, document assembly, compliance conversion | Local (CLI)        |
-| **pdf-tools-compdf**  | 50+ PDF operations via ComPDF Cloud REST API. Format conversion, page editing, OCR, watermarking, text extraction                  | Cloud integration, lightweight calling, no local deps  | Cloud API          |
+## Supported Features
 
-### pdf-to-word-docx — Convert PDFs/images to 10 Formats
+ComPDF Skills provide document conversion, PDF operations, and intelligent parsing and data extraction for agents, as detailed below:
 
-This is a local skill for image and PDF conversion. Converts PDFs and images to Word, Excel, PPT, HTML, Markdown, JSON, CSV, RTF, TXT, and Image with AI-powered layout analysis and OCR.
+### 1. PDF Parsing and Data Extraction
 
-**Usage examples:**
+| Capability                        | Description                                                                                                       |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| Image Parsing and Data Extraction | Extract text, tables, fields, and structured content from image files for downstream AI workflows and automation. |
+| PDF Parsing and Data Extraction   | Extract text, tables, fields, and structured content from PDF files for downstream AI workflows and automation.   |
 
-```bash
-# PDF to Word (default: AI layout analysis enabled)
-npx skills run pdf-to-word-docx word input.pdf output.docx
+### 2. PDF and Image Conversion
 
-# PDF to Excel, one worksheet per page
-npx skills run pdf-to-word-docx excel input.pdf output.xlsx --excel-worksheet-option for-page
+| Capability            | Description                                                                                                                                               |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| PDF to Word           | Convert PDF files into editable Word documents while preserving the original layout, text, images, and formatting as much as possible.                    |
+| PDF to Excel          | Convert PDF files into Excel workbooks with support for tables, numbers, and structured business data.                                                    |
+| PDF to Slide          | Convert PDF pages into editable PowerPoint slides while preserving the original layout and visual structure as much as possible.                          |
+| PDF to HTML           | Convert PDF files into HTML for web display and content reuse while retaining text, images, tables, and layout.                                           |
+| PDF to RTF            | Convert PDF files into RTF documents with support for text and image content.                                                                             |
+| PDF to Image          | Convert PDF pages into PNG, JPG, JPEG, JPEG2000, BMP, TIFF, TGA, GIF, and WEBP images with configurable resolution and DPI.                               |
+| PDF to CSV            | Extract tables from PDF files and export them as CSV, either table by table or as merged output.                                                          |
+| PDF to TXT            | Extract text from PDF or scanned PDF files and save it as plain text.                                                                                     |
+| PDF to JSON           | Extract text, tables, and images from PDF files and save them as structured JSON.                                                                         |
+| PDF to Markdown       | Convert PDF files into Markdown for easier reuse in knowledge bases, developer docs, blog systems, and AI workflows.                                      |
+| PDF to Searchable PDF | Run OCR on scanned PDFs and output searchable PDFs with selectable, copyable, and highlightable text for retrieval, archiving, and downstream processing. |
+| PDF to Searchable OFD | Run OCR on scanned PDFs and convert them into searchable OFD files for OFD archiving, document circulation, and localized office scenarios.               |
+| Word to PDF           | Convert Word documents into PDF while preserving layout, fonts, images, and page structure as much as possible for sharing, archiving, and printing.      |
+| PNG to PDF            | Convert PNG images into PDF for easier packaging, sharing, printing, and archiving of screenshots, design files, or supporting image materials.           |
+| RTF to PDF            | Convert RTF documents into PDF while preserving core text styling and layout for consistent cross-device viewing and formal output.                       |
+| Excel to PDF          | Convert Excel workbooks or spreadsheets into PDF for report sharing, printing, archiving, and preventing accidental formula edits.                        |
+| TXT to PDF            | Convert plain TXT files into PDF, making logs, notes, and text instructions easier to organize as fixed-layout documents.                                 |
+| CSV to PDF            | Convert CSV table data into PDF for snapshot sharing, review, printing, and business archiving.                                                           |
+| Slide to PDF          | Convert PowerPoint presentations into PDF for presentation distribution, cross-device viewing, and formal record keeping.                                 |
+| HTML to PDF           | Convert HTML pages or content fragments into PDF for webpage preservation, report export, email archiving, and printable output.                          |
+| Image to Word         | Convert JPG, JPEG, PNG, and BMP image files into editable Word documents.                                                                                 |
+| Image to Excel        | Convert image files into Excel workbooks with support for tables, text, and numeric content.                                                              |
+| Image to PPT          | Convert image files into editable PowerPoint slides while preserving visible layout and content structure as much as possible.                            |
+| Image to PDF          | Convert JPG, JPEG, PNG, BMP, and similar image files into PDF for consolidating, sharing, printing, and archiving one or multiple images.                 |
+| Image to HTML         | Convert image files into HTML while preserving text, layout, tables, and major visual elements as much as possible.                                       |
+| Image to RTF          | Convert image files into RTF documents with support for extracted text and images.                                                                        |
+| Image to CSV          | Extract tables from image files and export them as CSV.                                                                                                   |
+| Image to TXT          | Extract text from image files and save it as plain text.                                                                                                  |
+| Image to JSON         | Extract text, tables, and images from image files and save them as structured JSON.                                                                       |
 
-# PDF to Markdown (great for LLM data prep)
-npx skills run pdf-to-word-docx markdown input.pdf output.md
+### 3. PDF Editing and Protection
 
-# Scanned image to Word (OCR auto-enabled)
-npx skills run pdf-to-word-docx word scan.png output.docx --ocr-language english
+| Capability       | Description                                                                      |
+| ---------------- | -------------------------------------------------------------------------------- |
+| Merge PDF Files  | Combine multiple PDF files into a single PDF document.                           |
+| Split PDF Files  | Split one PDF file into multiple smaller PDF files.                              |
+| Rotate PDF Pages | Rotate selected PDF pages by 90, 180, or 270 degrees.                            |
+| Insert Pages     | Insert blank pages, image pages, or pages from another PDF into an existing PDF. |
+| Delete Pages     | Remove one or more pages from a PDF file.                                        |
+| Extract Pages    | Extract selected pages or page ranges and save them as a new file.               |
+| Add Watermark    | Add text or image watermarks to PDF files for branding or usage control.         |
+| Remove Watermark | Remove text or image watermarks from supported PDF files.                        |
+| Encrypt PDF      | Protect PDF files with AES encryption and permission controls.                   |
+| Decrypt PDF      | Remove passwords from authorized PDF files for internal processing or reuse.     |
 
-# PDF to HTML, multi-page with bookmarks
-npx skills run pdf-to-word-docx html input.pdf output_dir --html-option multiple-page-with-bookmark
+## License and Free Access
 
-# PDF with specific page range
-npx skills run pdf-to-word-docx word input.pdf output.docx --page-ranges "1-3,5"
-```
+After installing ComPDF Skills, [sign up to get a License](https://www.compdf.com/compdf-portal/signin?utm_source=github&utm_medium=referral&utm_campaign=compdf_skills_repo_en&ref_platform_id=github_compdfkit_skills_en) and pass the API Key to your agents to start using it for free.
 
-**When to use:** Batch document archiving, content extraction for LLM input, invoice/contract digitization, scanned document OCR.
+![get-license](images/get-license.png)
 
-> **Trial:** 200 free conversions with auto-downloaded `license.xml` from `download.compdf.com`. AI model (~525MB) downloads on first run. To upgrade, replace `scripts/license.xml` with your purchased license file — no conversion limits.
+## Installation and Enablement
 
-### pdf-editor-compdf — Full PDF Page Editing
+We recommend installing ComPDF Skills from the GitHub Skills repository and keeping each skill directory together with its `SKILL.md`, `docs/`, `scripts/`, and any bundled resources. If the public repository URL is not finalized yet, replace the placeholders below with the actual repository URL or repository path before publishing.
 
-The **pdf-editor-compdf** is designed to edit, compare, and compress PDFs. All processing is **100% local** — no file leaves your machine.
+### 1. Get Skills from GitHub
 
-**Usage examples:**
-
-```bash
-# Split a PDF into individual pages
-npx skills run pdf-editor-compdf split "report.pdf" --mode all --overwrite
-
-# Merge multiple PDFs
-npx skills run pdf-editor-compdf merge "a.pdf" "b.pdf" --output "merged.pdf" --overwrite
-
-# Extract pages 2-5
-npx skills run pdf-editor-compdf extract "input.pdf" --range 2-5 --output "out.pdf" --overwrite
-
-# Convert to PDF/A-1a for archiving
-npx skills run pdf-editor-compdf convert "report.pdf" --standard pdfa-1a --overwrite
-
-# Compress images in a PDF
-npx skills run pdf-editor-compdf optimize "report.pdf" --compress-images --image-quality 50 --overwrite
-
-# Add "CONFIDENTIAL" watermark
-npx skills run pdf-editor-compdf watermark-text "report.pdf" --text "CONFIDENTIAL" --overwrite
-
-# Compare two PDF versions visually
-npx skills run pdf-editor-compdf compare "old.pdf" "new.pdf" --overwrite
-```
-
-**When to use:** Contract splitting/merging, version comparison, watermarking, PDF/A compliance for legal/regulatory archives, file size optimization.
-
-> **Trial:** 30-day free SDK license — on first use, provide your email; the skill sends an activation request to `wms.compdf.com/api/license/skillsTrial` and stores the license in `scripts/*/license_key_*.xml`. Run `--help` to confirm activation. CLI binary auto-downloads. To upgrade, [Contact Sales](https://www.compdf.com/contact-sales).
-
-### pdf-tools-compdf — 50+ Cloud PDF Operations
-
-Process PDFs through ComPDF Cloud REST API. Convert formats, edit pages, apply OCR, extract text and tables, and more — no local dependencies required. Works on any platform.
-
-**Usage examples:**
-
-```bash
-# PDF to Word (cloud)
-npx skills run pdf-tools-compdf --convert pdf/docx --file input.pdf
-
-# PDF to Image
-npx skills run pdf-tools-compdf --convert pdf/img --file input.pdf
-
-# Merge PDFs
-npx skills run pdf-tools-compdf --convert pdf/merge --file "file1.pdf,file2.pdf"
-
-# OCR a scanned document
-npx skills run pdf-tools-compdf --convert documentAI/ocr --file scan.pdf
-
-# Extract structured data with AI
-npx skills run pdf-tools-compdf --convert idp/documentExtract --file invoice.pdf
-
-# Compress PDF
-npx skills run pdf-tools-compdf --convert pdf/compress --file input.pdf
-```
-
-**When to use:** Lightweight cloud integration, no-install environments, batch processing via API, AI-powered document extraction and parsing.
-
-> **Trial:** 200+ free API calls per month. Register at [ComPDF Cloud dashboard](https://api-dashboard.compdf.com/api/keys?utm_source=github&utm_medium=compdf-skills&utm_campaign=compdf_skills_repo&ref_platform_id=github_compdfkit) to get your API Public Key. Authentication is via `x-api-key` HTTP header. The key can be stored in `config/public_key.txt` (optional, user-consented). No local license file required.
-
-## Install
-
-ComPDF Skills are available through multiple installation channels. Choose the one that fits your workflow.
-
-### Via [skills.sh](https://skills.sh) (Recommended)
-
-Install all skills at once with a single command — works across **20+ AI coding agents**:
+Option A: for platforms that support the Agent Skills standard, install directly from the repository path:
 
 ```bash
-npx skills add ComPDFKit/compdf-skills
+npx skills add <owner>/<repo>/skills -y
 ```
 
-Install a specific skill:
+Option B: manually clone or download the GitHub repository and copy the target skill folder:
 
 ```bash
-npx skills add ComPDFKit/compdf-skills@pdf-to-word-docx
-npx skills add ComPDFKit/compdf-skills@pdf-editor-compdf
-npx skills add ComPDFKit/compdf-skills@pdf-tools-compdf
+git clone https://github.com/ComPDFKit/compdf-skills.git
 ```
 
-### Via [ClawHub](https://clawhub.ai)
+Copy the target skill directory into each agent's supported Skills or Rules location and keep the full folder structure intact.
 
-Browse and install individual skills directly from ClawHub:
+### 2. Enable in Mainstream Agent Products
 
-- [pdf-to-word-docx](https://clawhub.ai/youna12345/pdf-to-word-docx)
-- [pdf-editor-compdf](https://clawhub.ai/youna12345/pdf-editor-compdf)
-- [pdf-tools-compdf](https://clawhub.ai/youna12345/pdf-tools-compdf)
+#### Claude Code
 
-### Via MCP (Model Context Protocol)
+1. Install and sign in to Claude Code.
+2. Install from the GitHub Skills distribution, or use the published skill install entry if one is available.
+3. If you use the repository-folder method, place the skill directory into Claude Code's skills location and restart the session.
+4. Start with a natural-language task, or explicitly invoke the skill by name.
 
-For MCP-compatible agents, use the ComPDF MCP servers:
+If the platform-side published entry is available, the install command usually follows this shape:
 
-- [MCP.SO — ComPDF MCP Server](https://mcp.so/server/comidp-mcp-server/ComPDF)
-- [MCPMarket — ComPDF MCP Server](https://mcpmarket.com/en/server/comidp)
+```bash
+claude skill add <namespace>/<skill-name>
+claude skill install <skill-url>
+```
 
-### Compatible Agents
+#### Windsurf
 
-The `npx skills add` command works out of the box with these AI coding agents:
+1. Open your project workspace.
+2. Place the downloaded skill folder in `.windsurf/skills/compdf-skills/`, or use the cross-agent compatible path `.agents/skills/compdf-skills/`.
+3. Make sure the directory includes `SKILL.md` and all required support files.
+4. Open Cascade and Windsurf will automatically discover the skill.
+5. Describe the task normally for automatic activation, or use `@compdf-skills` to invoke it manually.
 
-| Agent              | Notes                                                      |
-| ------------------ | ---------------------------------------------------------- |
-| **Claude Code**    | Skills load as procedural knowledge across sessions        |
-| **Cursor**         | SKILL.md files are auto-referenced by Cursor agents        |
-| **GitHub Copilot** | Skills augment project context for edits and chats         |
-| **Windsurf**       | Project-specific knowledge persists across sessions        |
-| **Gemini CLI**     | Compatible via the skills CLI for repo-scoped install      |
-| **OpenCode**       | Full skills.sh integration for repo-scoped skills          |
-| **Cline**          | Reads SKILL.md files for project-specific patterns         |
-| **Codex**          | OpenAI's coding agent, compatible with skills CLI          |
-| **VS Code**        | GitHub Copilot Chat supports the skills CLI                |
-| **Zed**            | SKILL.md files are auto-referenced by the built-in agent   |
-| **Roo**            | Autonomous coding agent with skills CLI support            |
-| **Trae**           | AI coding agent with skills CLI compatibility              |
-| **Goose**          | Block's on-machine agent, extends with procedural guidance |
-| **AMP**            | Research agent that loads skills as procedural knowledge   |
-| **Antigravity**    | Google's developer agent platform                          |
-| **ClawdBot**       | Supports skills CLI across sessions                        |
-| **Droid**          | Autonomous engineering agent                               |
-| **Kilo**           | AI coding agent with project-scoped capabilities           |
-| **Kiro CLI**       | Terminal agent with SKILL.md support                       |
-| **Nous Research**  | Open agent tooling with skills CLI support                 |
-| More Agent ...     |                                                            |
+#### Cline
 
+1. Install and open Cline.
+2. Place the downloaded skill folder in the project-level path `.cline/skills/compdf-skills/`, or the global path `~/.cline/skills/compdf-skills/`.
+3. Open the Cline panel and confirm the skill is discovered and enabled from the Skills entry.
+4. Start with a natural-language task, or trigger the skill explicitly with `/compdf-skills`.
+
+#### Cursor
+
+Cursor's current official workflow emphasizes Rules and `AGENTS.md` rather than a standalone native Skills directory.
+
+1. Pull the core instruction files from the ComPDF Skills GitHub repository.
+2. Convert the shared guidance into a project rule such as `.cursor/rules/compdf-skills.mdc`, or place an `AGENTS.md` file at the project root as the compatibility layer.
+3. Open Cursor Agent or Cursor CLI. The rule files will load automatically based on configuration.
+4. Ask for tasks such as conversion, extraction, OCR, or watermarking directly in the agent.
+
+#### Internal Enterprise Agent Platforms
+
+1. Mirror the ComPDF Skills GitHub repository into the internal source-control or artifact system.
+2. Maintain `SKILL.md`, versioning, license files, and support scripts in one controlled package.
+3. Mount the skills directory into the enterprise agent platform, or transform the core instructions into platform-native rule templates.
+4. We recommend the workflow `ComPDF preprocessing + AI reasoning`: parse, convert, and extract first, then pass the result to the model.
+
+## Use Cases and Example Prompts
+
+Upload a PDF, image, or other source file. Enter a task instruction such as extracting tables, converting formats, merging PDFs, or adding watermarks. The agent calls the corresponding ComPDF Skill and returns the result. If deeper analysis is needed, pass the processed output to AI afterward.
+
+**Example scenarios:**
+
+* In ChatGPT, custom agents, and enterprise agent platforms that support skills, users upload reports, white papers, or proposal PDFs, convert them to Markdown or Word first, and then ask AI for summaries, key takeaways, or content restructuring
+* In skills-based workflows for invoices, statements, scanned tables, and image attachments, users extract tables and structured data first, then continue with finance review, reimbursement prep, system entry, or automated routing
+* When organizing contracts, bids, quotations, delivery files, or archived documents in agent workflows, users first merge, split, watermark, and convert PDFs, then hand them off to AI for organization, naming, or outbound preparation
+* In multi-step workflows, users first turn PDF or image files into lightweight CSV, JSON, TXT, or Markdown outputs, then let downstream agents handle field normalization, knowledge-base ingestion, approval flows, or workflow automation
+
+**Example prompts:**
+
+* Convert this PDF into Word and preserve the layout as much as possible.
+* Extract all tables from this PDF and export them as CSV.
+* Convert this image into JSON and return structured content.
+* Merge these PDFs, add a watermark, and return the final file.
+* Convert this report into Markdown first, then summarize the key points.
+
+## Support
+
+If you have any questions or suggestions, you are welcome to:
+
+- Submit an `Issue`
+- Join the `Discussions`
+- [Contact the ComPDF team](https://www.compdf.com/contact-sales?utm_source=github&utm_medium=referral&utm_campaign=compdf_skills_repo_en&ref_platform_id=github_compdfkit_skills_en) for commercial licensing, enterprise deployment, or large-scale rollout needs
+
+If ComPDF Skills help your workflow, we'd love your ⭐ **Star**.
+
+---
+
+<p align="center">
+  <b>Built by the ComPDF team.</b><br>
+  <a href="https://www.compdf.com/?utm_source=github&utm_medium=referral&utm_campaign=compdf_skills_repo_en&ref_platform_id=github_compdfkit_skills_en">Website</a> ·
+  <a href="https://www.compdf.com/contact-sales?utm_source=github&utm_medium=referral&utm_campaign=compdf_skills_repo_en&ref_platform_id=github_compdfkit_skills_en">Contact Sales</a> ·
+  <a href="#installation-and-enablement">Installation</a>
+</p>
