@@ -109,7 +109,7 @@ ComPDF Skills をインストール後、[License を取得](https://www.compdf.
 方法 1：Agent Skills 標準に対応したプラットフォームでは、リポジトリパスから直接インストールできます。
 
 ```bash
-npx skills add <owner>/<repo>/skills -y
+npx skills add https://github.com/ComPDFKit/compdf-skills -y
 ```
 
 方法 2：GitHub リポジトリを手動で clone またはダウンロードし、対象 Skill フォルダをコピーします。

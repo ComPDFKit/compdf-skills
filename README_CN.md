@@ -109,7 +109,7 @@ ComPDF Skills 为 Agent 提供文档转换、PDF 操作，以及智能解析与�
 方式一：支持 Agent Skills 标准的平台，可直接通过仓库路径安装：
 
 ```bash
-npx skills add <owner>/<repo>/skills -y
+npx skills add https://github.com/ComPDFKit/compdf-skills -y
 ```
 
 方式二：手动从 GitHub 下载或克隆仓库，再复制目标 Skill 文件夹：

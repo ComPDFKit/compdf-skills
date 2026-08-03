@@ -109,7 +109,7 @@ We recommend installing ComPDF Skills from the GitHub Skills repository and keep
 Option A: for platforms that support the Agent Skills standard, install directly from the repository path:
 
 ```bash
-npx skills add <owner>/<repo>/skills -y
+npx skills add https://github.com/ComPDFKit/compdf-skills -y
 ```
 
 Option B: manually clone or download the GitHub repository and copy the target skill folder:
