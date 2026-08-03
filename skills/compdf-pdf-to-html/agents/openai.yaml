@@ -1,0 +1,4 @@
+interface:
+  display_name: "ComPDF PDF to HTML"
+  short_description: "Convert PDFs into reusable HTML."
+  default_prompt: "Use $compdf-pdf-to-html to prepare a ComPDF API request for this document task."

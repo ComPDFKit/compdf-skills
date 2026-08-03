@@ -1,0 +1,4 @@
+interface:
+  display_name: "ComPDF OCR"
+  short_description: "Recognize text from scanned PDFs and images."
+  default_prompt: "Use $compdf-ocr to prepare a ComPDF API request for this document task."

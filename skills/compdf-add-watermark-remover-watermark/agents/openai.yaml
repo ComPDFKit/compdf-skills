@@ -1,0 +1,4 @@
+interface:
+  display_name: "ComPDF Watermark Manager"
+  short_description: "Add or remove PDF watermarks."
+  default_prompt: "Use $compdf-add-watermark-remover-watermark to prepare a ComPDF API request for this document task."

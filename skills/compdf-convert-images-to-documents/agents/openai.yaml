@@ -1,0 +1,4 @@
+interface:
+  display_name: "ComPDF Convert Images to Documents"
+  short_description: "Turn images into editable business documents."
+  default_prompt: "Use $compdf-convert-images-to-documents to prepare a ComPDF API request for this document task."

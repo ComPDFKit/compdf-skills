@@ -1,0 +1,4 @@
+interface:
+  display_name: "ComPDF Word to PDF"
+  short_description: "Turn Word documents into polished PDFs."
+  default_prompt: "Use $compdf-word-to-pdf to prepare a ComPDF API request for this document task."

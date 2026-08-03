@@ -1,0 +1,4 @@
+interface:
+  display_name: "ComPDF PDF to JSON"
+  short_description: "Extract PDF content into structured JSON."
+  default_prompt: "Use $compdf-pdf-to-json to prepare a ComPDF API request for this document task."

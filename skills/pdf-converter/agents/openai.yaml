@@ -1,0 +1,4 @@
+interface:
+  display_name: "PDF Converter"
+  short_description: "Bidirectional PDF conversion for documents."
+  default_prompt: "Use $pdf-converter to prepare a ComPDF API request for this document task."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "ComPDF Compress PDF"
+  short_description: "Reduce PDF size while preserving quality."
+  default_prompt: "Use $compdf-compress-pdf to prepare a ComPDF API request for this document task."

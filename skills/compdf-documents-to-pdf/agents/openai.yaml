@@ -1,0 +1,4 @@
+interface:
+  display_name: "ComPDF Documents to PDF"
+  short_description: "Convert documents and data files to PDF."
+  default_prompt: "Use $compdf-documents-to-pdf to prepare a ComPDF API request for this document task."

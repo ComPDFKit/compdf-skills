@@ -1,0 +1,4 @@
+interface:
+  display_name: "ComPDF PDF to Markdown"
+  short_description: "Convert PDFs into clean Markdown."
+  default_prompt: "Use $compdf-pdf-to-markdown to prepare a ComPDF API request for this document task."

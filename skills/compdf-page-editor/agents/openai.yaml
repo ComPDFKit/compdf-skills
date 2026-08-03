@@ -1,0 +1,4 @@
+interface:
+  display_name: "ComPDF Page Editor"
+  short_description: "Edit PDF pages and document structure."
+  default_prompt: "Use $compdf-page-editor to prepare a ComPDF API request for this document task."

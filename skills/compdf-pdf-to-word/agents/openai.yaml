@@ -1,0 +1,4 @@
+interface:
+  display_name: "ComPDF PDF to Word"
+  short_description: "Convert PDFs into editable Word documents."
+  default_prompt: "Use $compdf-pdf-to-word to prepare a ComPDF API request for this document task."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "ComPDF Encrypt & Decrypt PDF"
+  short_description: "Encrypt or decrypt authorized PDF files."
+  default_prompt: "Use $compdf-encryt-pdf-decrypt-pdf to prepare a ComPDF API request for this document task."

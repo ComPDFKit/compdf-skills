@@ -1,4 +1,0 @@
-interface:
-  display_name: "ComPDF API"
-  short_description: "Process documents with ComPDF Server API."
-  default_prompt: "Use $compdf-api to choose and prepare a ComPDF API request for this document task."

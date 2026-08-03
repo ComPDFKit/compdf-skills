@@ -1,0 +1,4 @@
+interface:
+  display_name: "ComPDF Toolkit"
+  short_description: "All-in-one PDF workflow for document tasks."
+  default_prompt: "Use $compdf-toolkit to prepare a ComPDF API request for this document task."
