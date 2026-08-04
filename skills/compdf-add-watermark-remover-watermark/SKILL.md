@@ -7,7 +7,7 @@ description: Add or remove text and image watermarks in PDFs with ComPDF. Use fo
 
 ## Overview
 
-ComPDF Watermark Manager helps teams control how PDF files are branded, marked, and cleaned up across workflows. It supports adding text or image watermarks for draft review, internal circulation, or brand consistency, and removing watermarks from supported files when documents need to be repurposed or prepared for final delivery.
+compdf-add-watermark-remover-watermark helps teams control how PDF files are branded, marked, and cleaned up across workflows. It supports adding text or image watermarks for draft review, internal circulation, or brand consistency, and removing watermarks from supported files when documents need to be repurposed or prepared for final delivery.
 
 Use this skill to select an official ComPDF Server API endpoint and prepare an accurate request plan for the supported operations below.
 
