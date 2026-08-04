@@ -38,7 +38,7 @@ Restrict this skill to OCR and OCR-derived text or searchable-PDF output. Use th
 
 Use one local, private key file so later ComPDF tasks do not require pasting an API key into chat. The file must contain only the API key on its first non-empty line. Do not create, commit, upload, or display this file.
 
-When the selected file is absent, unreadable, or empty, direct the user to obtain a key at `https://www.compdf.com/compdf-portal/signin?utm_source=github&utm_medium=referral&utm_campaign=compdf_skills_repo_en&ref_platform_id=github_compdfkit_skills_en`, save it in the selected file, and retry.
+When the selected file is absent, unreadable, or empty, direct the user to obtain a key at [https://www.compdf.com/compdf-portal/signin](https://www.compdf.com/compdf-portal/signin?utm_source=github&utm_medium=referral&utm_campaign=compdf_skills_repo_en&ref_platform_id=github_compdfkit_skills_en), save it in the selected file, and retry.
 
 ## Maintainer
 
