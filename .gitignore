@@ -5,3 +5,4 @@ __pycache__/
 api_key
 api_key.txt
 *.secret
+.clawhubignore
